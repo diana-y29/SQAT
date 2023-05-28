@@ -13,7 +13,6 @@ import java.util.*;
 import org.openqa.selenium.support.ui.Select;
 
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 public class SeleniumTest {
     private WebDriver driver;
@@ -37,18 +36,10 @@ public class SeleniumTest {
 
     // Login with correct email address and password and logout
     @Test
-    public void loginTest() {
+    public void loginAndLogoutTest() {
         UserPage userPage = new UserPage(this.driver);
         userPage.login();
-    }
-    @Test(dependsOnMethods={"loginTest"})
-    public void verifyLoginTest() {
-        UserPage userPage = new UserPage(this.driver);
         Assert.assertTrue(userPage.getBodyText().contains("KUPONOK"));
-    }
-    @Test(dependsOnMethods={"logintest","verifyLoginTest"})
-    public void logoutTest() {
-        UserPage userPage = new UserPage(this.driver);
         userPage.logout();
     }
 
@@ -84,7 +75,6 @@ public class SeleniumTest {
         basePage.setDriver("https://koreaimaszkok.hu/18-szemmaszkok");
         Assert.assertTrue(basePage.getBodyText().contains("Szemmaszk"));
     }
-
 
     // Read the page's title
     @Test
