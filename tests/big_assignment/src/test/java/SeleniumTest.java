@@ -12,8 +12,6 @@ import org.openqa.selenium.support.ui.*;
 import java.util.*;
 import org.openqa.selenium.support.ui.Select;
 
-import org.testng.Assert;
-
 public class SeleniumTest {
     private WebDriver driver;
     private String[] urls = {"https://koreaimaszkok.hu/10-arcmaszkok", "https://koreaimaszkok.hu/marka/26-cosrx", "https://koreaimaszkok.hu/marka/28-jayjun", "https://koreaimaszkok.hu/marka/29-heimish"};
